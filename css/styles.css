@@ -10,7 +10,7 @@ body {
 .hero-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../images/20211015_142024 (1).jpg');
     background-size: cover;
-    background-position: center 80%; /* Further adjusted to show the awning */
+    background-position: center 30%; /* Adjusted to show more of the store's upper area and awning */
 }
 
 /* Page Sections */
