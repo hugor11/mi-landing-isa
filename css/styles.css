@@ -1,0 +1,130 @@
+/* Global and Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hero Section */
+.hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../images/20211015_142024 (1).jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Page Sections */
+.slogan-section { background-color: #f3f4f6; }
+.feature-section { background-color: #fff; }
+.feature-section-alt { background-color: #fee2e2; }
+.feature-section-gray { background-color: #f9fafb; }
+
+/* Common Components */
+.slogan-text {
+    color: #a37b52;
+    font-weight: 900;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+.feature-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    color: #c53030;
+}
+.schedule-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 0.75rem;
+    color: #c53030;
+}
+.social-icon {
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease;
+}
+.social-icon:hover {
+    transform: scale(1.1);
+}
+.whatsapp-contact-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+}
+.whatsapp-contact-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Payment Logos */
+.payment-logos-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.payment-logo-img {
+    height: 35px;
+    width: auto;
+}
+
+/* Testimonials */
+.testimonial-card {
+    background-color: #f9fafb;
+    border-left: 4px solid #c53030;
+}
+.star-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #f59e0b;
+}
+
+/* Promotions (from cerveza.html) */
+.promo-card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.promo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-color: #ef4444; /* red-500 */
+}
+
+/* Floating Action Buttons & Bars */
+.floating-whatsapp {
+    position: fixed;
+    right: 16px;
+    /* This assumes the mobile CTA bar is present on all pages for consistency */
+    bottom: 88px;
+    z-index: 50;
+}
+.mobile-cta-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+}
+
+/* --- UI Enhancements --- */
+
+/* Active state for navigation */
+.nav-link-active {
+    color: #fca5a5; /* red-300 */
+    font-weight: 600;
+}
+
+/* Animation for sections */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
