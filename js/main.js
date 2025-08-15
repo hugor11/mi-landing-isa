@@ -61,4 +61,88 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(section);
         });
     }
+
+    // --- Reviews Carousel (Opiniones) ---
+    const track = document.getElementById('reviewsTrack');
+    const dotsContainer = document.getElementById('reviewDots');
+    const prevBtn = document.getElementById('prevReview');
+    const nextBtn = document.getElementById('nextReview');
+    if (track && dotsContainer && prevBtn && nextBtn) {
+        const slides = Array.from(track.children);
+        let index = 0;
+        let autoplayId = null;
+
+        // Build dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-gray-300 aria-[current=true]:bg-red-600';
+            dot.setAttribute('aria-label', `Ir a reseña ${i + 1}`);
+            if (i === 0) dot.setAttribute('aria-current', 'true');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        function update() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            // Update dots
+            Array.from(dotsContainer.children).forEach((d, i) => {
+                if (i === index) d.setAttribute('aria-current', 'true');
+                else d.removeAttribute('aria-current');
+            });
+        }
+
+        function goTo(i) {
+            index = (i + slides.length) % slides.length;
+            update();
+        }
+
+        function next() { goTo(index + 1); }
+        function prev() { goTo(index - 1); }
+
+        nextBtn.addEventListener('click', next);
+        prevBtn.addEventListener('click', prev);
+
+        // Autoplay
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayId = setInterval(next, 5000);
+        }
+        function stopAutoplay() {
+            if (autoplayId) clearInterval(autoplayId);
+            autoplayId = null;
+        }
+        startAutoplay();
+
+        // Pause on hover/focus for accessibility
+        const carousel = document.getElementById('reviewsCarousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+            carousel.addEventListener('focusin', stopAutoplay);
+            carousel.addEventListener('focusout', startAutoplay);
+        }
+
+        // Touch swipe support
+        let startX = 0;
+        let isSwiping = false;
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isSwiping = true;
+            stopAutoplay();
+        }, { passive: true });
+        track.addEventListener('touchmove', (e) => {
+            if (!isSwiping) return;
+            const dx = e.touches[0].clientX - startX;
+            // optional: could add drag feedback by setting transform here
+        }, { passive: true });
+        track.addEventListener('touchend', (e) => {
+            if (!isSwiping) return;
+            const dx = e.changedTouches[0].clientX - startX;
+            if (dx > 50) prev();
+            else if (dx < -50) next();
+            isSwiping = false;
+            startAutoplay();
+        });
+    }
 });
