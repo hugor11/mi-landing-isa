@@ -30,12 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add active class to current page's nav link
     const currentPage = window.location.pathname.split("/").pop();
-    if (currentPage === 'cerveza.html') {
-        const promoLink = document.querySelector('nav a[href="cerveza.html"]');
-        if (promoLink) {
-            promoLink.classList.add('nav-link-active');
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href').split("/").pop();
+        // Check for a direct match or if the link is for index.html and we are at the root.
+        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+            // Avoid adding active class to the WhatsApp button or other non-page links
+            if(link.href.includes('.html')) {
+                link.classList.add('nav-link-active');
+            }
         }
-    }
+    });
 
     // Fade-in sections on scroll
     const sections = document.querySelectorAll('.fade-in-section');
