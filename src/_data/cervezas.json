@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Modelo Latón",
+    "image": "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750106419188L1.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+    "placeholder": "https://placehold.co/150x150/4B5563/FFFFFF?text=Modelo",
+    "borderClass": "border-gray-600",
+    "chipBg": "bg-gray-100",
+    "prices": [
+      { "label": "1 Pieza", "value": "$28 MXN", "emphasis": false },
+      { "label": "4 Piezas", "value": "$104 MXN", "emphasis": true },
+      { "label": "Charola", "value": "$600 MXN", "emphasis": true }
+    ],
+    "whatsappUrl": "https://wa.me/5546593180?text=Hola%2C%20estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Modelo%20Lat%C3%B3n."
+  },
+  {
+    "name": "Victoria Latón",
+    "image": "https://static.wixstatic.com/media/1bbfe3_3567b65dcc7c40a28d3e9fd8df10c778~mv2.png/v1/fill/w_480,h_480,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/1bbfe3_3567b65dcc7c40a28d3e9fd8df10c778~mv2.png",
+    "placeholder": "https://placehold.co/150x150/FACC15/FFFFFF?text=Victoria",
+    "borderClass": "border-yellow-500",
+    "chipBg": "bg-yellow-100",
+    "prices": [
+      { "label": "1 Pieza", "value": "$25 MXN", "emphasis": false },
+      { "label": "4 Piezas", "value": "$90 MXN", "emphasis": true },
+      { "label": "Charola", "value": "$500 MXN", "emphasis": true }
+    ],
+    "whatsappUrl": "https://wa.me/5546593180?text=Hola%2C%20estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Victoria%20Lat%C3%B3n."
+  },
+  {
+    "name": "Victoria Media",
+    "image": "https://laescocesa.com/cdn/shop/files/VictoriaMediaRetornable355Envase.jpg?v=1722630840",
+    "placeholder": "https://placehold.co/150x150/FACC15/FFFFFF?text=Victoria+Media",
+    "borderClass": "border-yellow-500",
+    "chipBg": "bg-yellow-100",
+    "prices": [
+      { "label": "1 Pieza", "value": "$18 MXN", "emphasis": false },
+      { "label": "Cartón", "value": "$380 MXN", "emphasis": true }
+    ],
+    "whatsappUrl": "https://wa.me/5546593180?text=Hola%2C%20estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Victoria%20Media."
+  },
+  {
+    "name": "Victoria Mega",
+    "image": "https://img77.uenicdn.com/image/upload/v1615026943/business/9963b077-4bb0-421a-bf46-240ee4321d5f.png",
+    "placeholder": "https://placehold.co/150x150/FACC15/FFFFFF?text=Victoria+Mega",
+    "borderClass": "border-yellow-500",
+    "chipBg": "bg-yellow-100",
+    "prices": [
+      { "label": "1 Pieza", "value": "$48 MXN", "emphasis": false },
+      { "label": "3 Piezas", "value": "$135 MXN", "emphasis": true },
+      { "label": "Cartón", "value": "$520 MXN", "emphasis": true }
+    ],
+    "whatsappUrl": "https://wa.me/5546593180?text=Hola%2C%20estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Victoria%20Mega."
+  },
+  {
+    "name": "Corona Media",
+    "image": "https://hebmx.vtexassets.com/arquivos/ids/604982/448405_1695917832.jpg?v=638521577739830000",
+    "placeholder": "https://placehold.co/150x150/EAB308/FFFFFF?text=Corona+Media",
+    "borderClass": "border-amber-400",
+    "chipBg": "bg-amber-100",
+    "prices": [
+      { "label": "1 Pieza", "value": "$18 MXN", "emphasis": false },
+      { "label": "Cartón", "value": "$380 MXN", "emphasis": true }
+    ],
+    "whatsappUrl": "https://wa.me/5546593180?text=Hola%2C%20estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Corona%20Media."
+  },
+  {
+    "name": "Corona Mega",
+    "image": "https://www.mexhaus.de/media/image/a9/72/c9/Cerveza-CAGUAMA-Corona-MEGA-1-2-l.jpg",
+    "placeholder": "https://placehold.co/150x150/EAB308/FFFFFF?text=Corona",
+    "borderClass": "border-amber-400",
+    "chipBg": "bg-amber-100",
+    "prices": [
+      { "label": "1 Pieza", "value": "$48 MXN", "emphasis": false },
+      { "label": "3 Piezas", "value": "$135 MXN", "emphasis": true },
+      { "label": "Cartón", "value": "$520 MXN", "emphasis": true }
+    ],
+    "whatsappUrl": "https://wa.me/5546593180?text=Hola%2C%20estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Corona%20Mega."
+  },
+  {
+    "name": "Caña de Oro",
+    "image": "https://d1zc67o3u1epb0.cloudfront.net/media/catalog/product/1/0/10607.jpg?width=265&height=390&store=default&image-type=image",
+    "placeholder": "https://placehold.co/150x150/10B981/FFFFFF?text=Ca%C3%B1a+de+Oro",
+    "borderClass": "border-green-600",
+    "chipBg": "bg-green-100",
+    "prices": [
+      { "label": "1 Pieza", "value": "$25 MXN", "emphasis": false },
+      { "label": "3 Piezas", "value": "$69 MXN", "emphasis": true }
+    ],
+    "whatsappUrl": "https://wa.me/5546593180?text=Hola%2C%20estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Ca%C3%B1a%20de%20Oro."
+  }
+]
