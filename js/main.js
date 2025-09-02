@@ -29,15 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- UI Enhancements ---
 
     // Add active class to current page's nav link
-    const currentPage = window.location.pathname.split("/").pop();
-    const navLinks = document.querySelectorAll('nav a');
-
+    const normalizePath = (p) => {
+        try {
+            const u = new URL(p, window.location.origin);
+            let path = u.pathname;
+            if (path.length > 1 && path.endsWith('/')) path = path.slice(0, -1);
+            return path || '/';
+        } catch {
+            return '/';
+        }
+    };
+    const currentPath = normalizePath(window.location.pathname);
+    const navLinks = document.querySelectorAll('nav a[href]');
     navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href').split("/").pop();
-        // Check for a direct match or if the link is for index.html and we are at the root.
-        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-            // Avoid adding active class to the WhatsApp button or other non-page links
-            if(link.href.includes('.html')) {
+        const linkPath = normalizePath(link.getAttribute('href'));
+        // Mark active for exact match or index variants
+        const isActive = linkPath === currentPath || (currentPath === '/' && (linkPath === '/' || linkPath === '/index.html'));
+        if (isActive) {
+            // Avoid non-page CTA buttons (like WhatsApp without .html or route)
+            if (linkPath === '/' || linkPath.startsWith('/')) {
                 link.classList.add('nav-link-active');
             }
         }

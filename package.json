@@ -1,0 +1,12 @@
+{
+  "name": "mi-landing-isa",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --quiet --port=8080"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

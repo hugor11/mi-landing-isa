@@ -1,6 +1,16 @@
 [build]
-  publish = "."
-  command = "echo Static site;"
+  publish = "_site"
+  command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/:slug.html"
+  to = "/:slug/"
+  status = 301

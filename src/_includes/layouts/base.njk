@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description | default('Mini Súper La Itzel en Texcoco: carnes frescas, abarrotes, servicio a domicilio y atención a negocios.') }}">
+  <title>{{ title | default('Mini Super La Itzel - Calidad y Confianza en Texcoco') }}</title>
+  <meta property="og:title" content="{{ og_title | default(title) }}">
+  <meta property="og:description" content="{{ og_description | default(description) }}">
+  <meta property="og:image" content="/images/20211015_142024 (1).jpg">
+  <meta name="theme-color" content="#991b1b">
+  <link rel="icon" href="/images/Abarrotes-ISA.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gray-100 text-gray-800" id="top">
+  {% include "partials/nav.njk" %}
+  <main class="pt-16">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
