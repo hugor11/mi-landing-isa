@@ -14,3 +14,13 @@
   from = "/:slug.html"
   to = "/:slug/"
   status = 301
+
+[[redirects]]
+  from = "/promos"
+  to = "/cerveza/"
+  status = 301
+
+[[redirects]]
+  from = "/promos/"
+  to = "/cerveza/"
+  status = 301
