@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
+    "start": "serve _site -l 3000",
     "dev": "eleventy --serve --quiet --port=8080"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
   }
 }
