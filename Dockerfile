@@ -1,33 +1,25 @@
-# Build stage
-FROM node:20-alpine AS builder
+# Usar Nginx para servir archivos estáticos
+FROM nginx:alpine
 
-WORKDIR /app
+# Copiar archivos HTML estáticos al directorio de Nginx
+COPY *.html /usr/share/nginx/html/
+COPY css /usr/share/nginx/html/css/
+COPY js /usr/share/nginx/html/js/
+COPY images /usr/share/nginx/html/images/
 
-# Copy package files
-COPY package*.json ./
+# Configuración personalizada de Nginx para HTML sin extensión
+RUN echo 'server { \
+    listen 80; \
+    server_name localhost; \
+    root /usr/share/nginx/html; \
+    index index.html; \
+    \
+    location / { \
+        try_files $uri $uri.html $uri/ =404; \
+    } \
+}' > /etc/nginx/conf.d/default.conf
 
-# Install all dependencies (including devDependencies for build)
-RUN npm ci
+# Exponer puerto 80
+EXPOSE 80
 
-# Copy source code
-COPY . .
-
-# Build the site with Eleventy
-RUN npm run build
-
-# Production stage
-FROM node:20-alpine
-
-WORKDIR /app
-
-# Install serve globally
-RUN npm install -g serve
-
-# Copy built files from builder
-COPY --from=builder /app/_site ./site
-
-# Expose port
-EXPOSE 3000
-
-# Start the application
-CMD ["serve", "-s", "site", "-l", "3000"]
+# Nginx se ejecuta automáticamente
